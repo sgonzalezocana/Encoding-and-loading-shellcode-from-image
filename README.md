@@ -41,7 +41,7 @@ The loading method is just a 'decryption' of the shellcode written to the imagen
 ![plot](./Images/image_infected_vt.png)
 
 - Loader analysis
-![plot](./Images/loader_vt.png.png)
+![plot](./Images/loader_vt.png)
 
 ## Legal disclaimer
 This project has been conducted as research for educational and ethical purposes. Using this code to attack organizations without prior consent is illegal. I am not responsible for the inappropriate or illegal actions made with the information exposed in this repository.
