@@ -36,5 +36,6 @@ The loading method is just a 'decryption' of the shellcode written to the imagen
 6. Finally, we load the decrypted shellcode with the method of our choice
 
 
-
+## Legal disclaimer
+This project has been conducted as research for educational and ethical purposes. Using this code to attack organizations without prior consent is illegal. I am not responsible for the inappropriate or illegal actions made with the information exposed in this repository.
 
