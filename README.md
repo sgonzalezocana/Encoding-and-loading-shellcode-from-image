@@ -31,10 +31,17 @@ The loading method is just a 'decryption' of the shellcode written to the imagen
     -  If the current byte corresponds to an even number possition of the original shellcode (without encryption), we xor it  the value that is shifted by one position from the current byte and we save it to a buffer created before
     - If the current byte corresponds to an odd number possition of the original shellcode (without encryption), we xor it with the value that is shifted by two positions from the current byte and we save it to a buffer created before
 
-![plot](./shellcodeDecryption.png)
+![plot](./Images/shellcodeDecryption.png)
 
 6. Finally, we load the decrypted shellcode with the method of our choice
 
+## Virus total analysis
+
+- Infected image with encrypted shellcode analysis
+![plot](./Images/image_infected_vt.png)
+
+- Loader analysis
+![plot](./Images/loader_vt.png.png)
 
 ## Legal disclaimer
 This project has been conducted as research for educational and ethical purposes. Using this code to attack organizations without prior consent is illegal. I am not responsible for the inappropriate or illegal actions made with the information exposed in this repository.
