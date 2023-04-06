@@ -6,7 +6,7 @@
 
 int main() {
     int i = 0;
-    //PoC_load_shellcode.png
+    
     //We load the bytes of the image on a vector 
     std::ifstream image("C:\\gaticos\\PoC_load_shellcode.png", std::ios::binary);
 
