@@ -31,7 +31,7 @@ The loading method is just a 'decryption' of the shellcode written to the imagen
     -  If the current byte corresponds to an even number possition of the original shellcode (without encryption), we xor it  the value that is shifted by one position from the current byte and we save it to a buffer created before
     - If the current byte corresponds to an odd number possition of the original shellcode (without encryption), we xor it with the value that is shifted by two positions from the current byte and we save it to a buffer created before
 
-![plot](./shellcode_decryption.png)
+![plot](./shellcodeDecryption.png)
 
 6. Finally, we load the decrypted shellcode with the method of our choice
 
